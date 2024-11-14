@@ -8,7 +8,9 @@
   - [Clear Space and Sizing](#clear-space-and-sizing)
   - [Modifications](#modifications)
   - [Usage on the web](#usage-on-the-web)
-- [Inquiries](#inquiries)
+- [Contributing](#contributing)
+  - [Generating assets](#generating-assets)
+  - [Inquiries](#inquiries)
 
 ## Introduction
 
@@ -74,6 +76,16 @@ The colors, fonts, and sizes of the logo and its variations have been carefully 
 When embedding the official CSS logo in websites, always use the official image files provided by the CSS Next community group. Ensure the logo scales properly on different devices and screen sizes.
 Use proper CSS properties like `margin`, `padding`, and `text-align` to maintain uniform positioning across layouts.
 
-## Inquiries
+## Contributing
+
+### Generating assets
+
+To generate the different assets of the logo, run the `assets.mjs` script using [Deno](https://deno.com/).
+
+```bash
+deno run --node-modules-dir=auto --allow-read --allow-write assets.mjs
+```
+
+### Inquiries
 
 For questions and issues regarding the CSS logo, feel free to open an issue.
