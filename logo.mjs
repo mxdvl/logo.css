@@ -1,13 +1,13 @@
 if (import.meta.main) {
   const settings = {
-    w1: 18,
-    h1: 26,
-    h2: 24,
-    t1: 12,
+    w1: 16,
+    h1: 19,
+    h2: 19,
+    t1: 8,
     t2: 12,
-    t3: 32,
+    t3: 24,
     r: 42,
-    s: 18,
+    s: 16,
     k: 24,
   };
   await Deno.writeTextFile(
