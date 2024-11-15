@@ -15,6 +15,10 @@ if (import.meta.main) {
     draw({ ...settings, fg: "white", bg: "rebeccapurple" }),
   );
   await Deno.writeTextFile(
+    "css.square.svg",
+    draw({ ...settings, r: 0, fg: "white", bg: "rebeccapurple" }),
+  );
+  await Deno.writeTextFile(
     "css.light.svg",
     draw({ ...settings, fg: "black", bg: "white" }),
   );
