@@ -87,21 +87,30 @@ function drawC({ h1, h2, w1, t1, t2 }) {
  * @returns {string} The SVG output
  */
 export function draw(foreground, background) {
-  const thickness = 16;
+  const thickness = 18;
 
   const w1 = 18;
 
-  const h1 = 24;
+  const h1 = 26;
   const h2 = 24;
 
   const t1 = 12;
   const t2 = 12;
-  const t3 = 30;
+  const t3 = 32;
 
   const k = thickness + 6;
+  const r = 42;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -120 240 240" width="240" fill="none">
   <title>CSS</title>
-  <rect x="-120" y="-120" width="240" height="240" rx="${k * 1.5}" fill="${background}" />
+  <path d="M-120,-120
+      H${120 - r}
+		  A ${r} ${r} 0 0 1 ${120} ${-120 + r}
+			V${120 - r}
+		  A ${r} ${r} 0 0 1 ${120 - r} ${120}
+		  H${-120 + r}
+		  A ${r} ${r} 0 0 1 ${-120} ${120 - r}
+		  Z
+  " fill="${background}" />
   <g class="CSS"
     stroke-width="${thickness}" stroke="${foreground}"
     transform="translate(${120 - k - w1} ${120 - h1 - h2 - k})"
@@ -122,4 +131,6 @@ export function draw(foreground, background) {
 </svg>`;
 }
 
-await Deno.writeTextFile("css.svg", draw("white", "rebeccapurple"));
+if (import.meta.main) {
+  await Deno.writeTextFile("css.svg", draw("white", "rebeccapurple"));
+}
