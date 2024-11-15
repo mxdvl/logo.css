@@ -12,19 +12,51 @@ if (import.meta.main) {
   };
   await Deno.writeTextFile(
     "css.svg",
-    draw({ ...settings, fg: "white", bg: "rebeccapurple" }),
+    draw({
+      ...settings,
+      fg: "white",
+      bg: "rebeccapurple",
+      id: "css",
+      title: "CSS Logo",
+      description:
+        "A purple square with rounded corners and the letters CSS inside in white",
+    }),
   );
   await Deno.writeTextFile(
     "css.square.svg",
-    draw({ ...settings, r: 0, fg: "white", bg: "rebeccapurple" }),
+    draw({
+      ...settings,
+      r: 0,
+      fg: "white",
+      bg: "rebeccapurple",
+      id: "css-square",
+      title: "CSS Logo Square",
+      description: "A purple square and the letters CSS inside in white",
+    }),
   );
   await Deno.writeTextFile(
     "css.light.svg",
-    draw({ ...settings, fg: "black", bg: "white" }),
+    draw({
+      ...settings,
+      fg: "black",
+      bg: "white",
+      id: "css-light",
+      title: "CSS Logo Light",
+      description:
+        "A white square with rounded corners and the letters CSS inside in black",
+    }),
   );
   await Deno.writeTextFile(
     "css.dark.svg",
-    draw({ ...settings, fg: "white", bg: "black" }),
+    draw({
+      ...settings,
+      fg: "white",
+      bg: "black",
+      id: "css-dark",
+      title: "CSS Logo Dark",
+      description:
+        "A black square with rounded corners and the letters CSS inside in white",
+    }),
   );
 }
 
@@ -34,27 +66,47 @@ if (import.meta.main) {
  * [Explore as an interactive version]( https://codepen.io/mxdvl/pen/zYgbKBe)
  *
  * @param {object} settings
- * @param {string} settings.fg
- * @param {string} settings.bg
+ * @param {number} settings.id
+ * @param {number} settings.title
+ * @param {number} settings.description
  *
- * @param {number} settings.w1
+ * @param {string} settings.fg foreground color
+ * @param {string} settings.bg background color
  *
- * @param {number} settings.h1
- * @param {number} settings.h2
+ * @param {number} settings.w1 width
  *
- * @param {number} settings.t1
- * @param {number} settings.t2
- * @param {number} settings.t3
+ * @param {number} settings.h1 first height
+ * @param {number} settings.h2 second height
  *
- * @param {number} settings.s
- * @param {number} settings.k
- * @param {number} settings.r
+ * @param {number} settings.t1 first tension
+ * @param {number} settings.t2 second tension
+ * @param {number} settings.t3 third tension
+ *
+ * @param {number} settings.s stroke thickness
+ * @param {number} settings.k letter kerning
+ * @param {number} settings.r corner radius
  *
  * @returns {string} The SVG output
  */
-export function draw({ fg, bg, w1, h1, h2, t1, t2, t3, s, r, k }) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -120 240 240" width="240" fill="none">
-  <title>CSS</title>
+export function draw({
+  id,
+  title,
+  description,
+  fg,
+  bg,
+  w1,
+  h1,
+  h2,
+  t1,
+  t2,
+  t3,
+  s,
+  r,
+  k,
+}) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -120 240 240" width="240" fill="none" role="img" aria-labelledby="${id}-title ${id}-description">
+  <title id="css-dark-title">${title}</title>
+  <desc id="css-dark-description">${description}</desc>
   <path d="M-120,-120
       H${120 - r}
 		  A ${r} ${r} 0 0 1 ${120} ${-120 + r}
