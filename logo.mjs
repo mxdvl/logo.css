@@ -107,7 +107,7 @@ export function draw({
   k,
   o,
 }) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="240" fill="none" role="img" aria-labelledby="${id}-title ${id}-description">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none" role="img" aria-labelledby="${id}-title ${id}-description">
   <title id="css-dark-title">${title}</title>
   <desc id="css-dark-description">${description}</desc>
   <path d="M0,0
