@@ -1,14 +1,15 @@
 if (import.meta.main) {
   const settings = {
-    w1: 16,
-    h1: 19,
-    h2: 19,
-    t1: 8,
-    t2: 12,
-    t3: 24,
-    r: 42,
-    s: 16,
-    k: 24,
+    w1: 67,
+    h1: 78,
+    h2: 78,
+    t1: 36,
+    t2: 50,
+    t3: 100,
+    r: 160,
+    s: 72,
+    k: 105,
+    o: 115,
   };
   await Deno.writeTextFile(
     "css.svg",
@@ -85,6 +86,7 @@ if (import.meta.main) {
  * @param {number} settings.s stroke thickness
  * @param {number} settings.k letter kerning
  * @param {number} settings.r corner radius
+ * @param {number} settings.o corner offset
  *
  * @returns {string} The SVG output
  */
@@ -103,22 +105,23 @@ export function draw({
   s,
   r,
   k,
+  o,
 }) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -120 240 240" width="240" fill="none" role="img" aria-labelledby="${id}-title ${id}-description">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="240" fill="none" role="img" aria-labelledby="${id}-title ${id}-description">
   <title id="css-dark-title">${title}</title>
   <desc id="css-dark-description">${description}</desc>
-  <path d="M-120,-120
-      H${120 - r}
-		  A ${r} ${r} 0 0 1 ${120} ${-120 + r}
-			V${120 - r}
-		  A ${r} ${r} 0 0 1 ${120 - r} ${120}
-		  H${-120 + r}
-		  A ${r} ${r} 0 0 1 ${-120} ${120 - r}
+  <path d="M0,0
+      H${1000 - r}
+		  A ${r} ${r} 0 0 1 ${1000} ${r}
+				V${1000 - r}
+		  A ${r} ${r} 0 0 1 ${1000 - r} ${1000}
+		  H${r}
+		  A ${r} ${r} 0 0 1 ${0} ${1000 - r}
 		  Z
   " fill="${bg}" />
   <g class="CSS"
     stroke-width="${s}" stroke="${fg}"
-    transform="translate(${120 - k - w1} ${120 - h1 - h2 - k})"
+    transform="translate(${1000 - o - w1} ${1000 - o - h1 - h2})"
   >
     <path class="C"
       transform="translate(-${w1 * 4 + k * 2} 0)"
