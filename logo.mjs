@@ -108,8 +108,8 @@ export function draw({
   o,
 }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none" role="img" aria-labelledby="${id}-title ${id}-description">
-  <title id="css-dark-title">${title}</title>
-  <desc id="css-dark-description">${description}</desc>
+  <title id="${id}-title">${title}</title>
+  <desc id="${id}-description">${description}</desc>
   <path d="M0,0
       H${1000 - r}
 		  A ${r} ${r} 0 0 1 ${1000} ${r}
