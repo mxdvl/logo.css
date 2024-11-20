@@ -30,7 +30,7 @@ The logo is released under an MIT license so you use it as you want. Nevertheles
 
 ### Font
 
-The logo uses [**Dinish Condensed Heavy**](https://github.com/playbeing/dinish/releases/download/v3.908/dinish-ttf.zip) it is open-source and free to use. The numbers have been slightly adjusted to match the overall logo, therefore we advise you to only use the official logos provided by the CSS Next Community Group inside of this repository to keep the logo recognizable across different sources.
+The logo uses [**Dinish Condensed Heavy**](https://github.com/playbeing/dinish/releases/download/v3.908/dinish-ttf.zip) which is open-source and free to use. The numbers have been slightly adjusted to match the overall logo, therefore we advise you to only use the official logos provided by the CSS Next Community Group inside of this repository to keep the logo recognizable across different sources.
 
 ### Colors
 
